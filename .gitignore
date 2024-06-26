@@ -1,0 +1,7 @@
+node_modules
+cypress.env.json
+browserstack.json
+log
+.env
+npm_install_debug.log
+results
