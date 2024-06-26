@@ -1,0 +1,30 @@
+{
+    "auth": {
+        "username": "${BROWSERSTACK_USERNAME}",
+        "access_key": "${access_key}"
+    },
+    "browsers": [
+        {
+            "browser": "chrome",
+            "os": "Windows 10",
+            "versions": [
+                "latest",
+                "latest - 1"
+            ]
+        }
+    ],
+    "run_settings": {
+        "cypress_config_file": "./cypress.config.js",
+        "cypress_version": "13.12.0",
+        "specs": [
+            "cypress/e2e/1-getting-started/test.cy.js"
+        ],
+        "project_name": "My sandbox project",
+        "build_name": "Build no. 1",
+        "parallels": "5",
+        "npm_dependencies": {
+            "cypress": "^13.12.0",
+            "cypress-xpath": "^2.0.1"
+        }
+    }
+}
