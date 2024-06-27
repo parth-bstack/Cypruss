@@ -1,12 +1,15 @@
 import 'cypress-xpath';
+import '@percy/cypress';
 
 describe('test', () => {
     it("Demo", () => {
 
         cy.visit("https://www.bstackdemo.com")
+        cy.percySnapshot("Home Page");
         cy.contains("Sign In")
         cy.contains("Sign In").click()
         cy.url().should('include', '/signin')
+        cy.percySnapshot("Sign in Page");
         cy.contains('Select Username').should('be.visible').click();
         cy.get('#react-select-2-input').type("demouser\n")
         // cy.get('#react-select-2-input')
@@ -18,6 +21,7 @@ describe('test', () => {
         cy.get('#react-select-3-input').type('testingisfun99\n');
         cy.get('#login-btn').click()
         cy.xpath("//*[@id='1']/div[4]").should('be.visible').click();
+        cy.percySnapshot("Random");
         cy.contains('Checkout').should('be.visible').click()
         cy.get('#firstNameInput').should('be.visible').click().type('Parth')
         cy.get('#lastNameInput').type('Barai')
@@ -26,6 +30,7 @@ describe('test', () => {
         cy.get('#postCodeInput').type('400092')
         cy.get('#checkout-shipping-continue').click()
         cy.get('#confirmation-message').should('have.text', 'Your Order has been successfully placed.')
+        cy.percySnapshot("Last Page");
         cy.end()
 
         //   cy.visit("https://bstackdemo.com/");
